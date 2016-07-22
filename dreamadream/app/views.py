@@ -27,10 +27,9 @@ def workshop(request):
 	year = today.year
 	workshops=[]
 	details = Workshop.objects.filter(date__year=year, date__month=month)
-	name = Workshop.objects.name
 	for workshop in details:
-		workshops.append(workshop)
-	data = {'id':2, 'count':len(workshops), 'Name':name}
+		workshops.append(workshop.name)
+	data = {'id':2, 'count':len(workshops), 'names':workshops}
 	
 	return HttpResponse(json.dumps(data))
 
