@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^graph/', views.graph),
     url(r'^get_relation/', views.get_relation),
     url(r'^jet/', include('jet.urls', 'jet')),
+    url(r'^saveadream/$', views.svm, name='abt'),
 ]
