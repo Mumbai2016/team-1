@@ -23,5 +23,9 @@ urlpatterns = [
     url(r'^getstatus/', views.current_status),
     url(r'^workshop/', views.workshop),
     url(r'^update_status/', views.update_status),
+    url(r'^svm/', views.svm),
+    url(r'^dash/', views.dash),
+    url(r'^graph/', views.graph),
+    url(r'^get_relation/', views.get_relation),
     url(r'^jet/', include('jet.urls', 'jet')),
 ]

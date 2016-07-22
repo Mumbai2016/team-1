@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from models import Student,Workshop
+from models import Student,Workshop,RelationMentor
 import datetime
 import json
-# Create your views here.
 def current_status(request):
 	if request.method == 'GET':
 		student_id = int(request.GET['student_id'])
@@ -38,6 +37,28 @@ def get_status_by_no(request):
 	if request.method == 'POST':
 		number = int(request.POST['phone'])
 		status = Student.objects.get(id = number).current_status
-
 	return HttpResponse(status)
+
+
+def get_relation(request):
+    rm = RelationMentor.objects.all()
+    return HttpResponse(json.dumps({'result' : [r for r in rm]}))
+
+
+def svm(request):
+    import numpy as np
+    from sklearn.svm import SVC
+    X = np.array([[-1, -1], [-2, -1], [1, 1], [2, 1]])
+    y = np.array([0, 0, 1, 1])
+    clf = SVC()
+    clf.fit(X, y)
+    return HttpResponse(clf.predict([[-0.8, -1]]))
+
+
+def dash(request):
+	return render(request,'dashh.html')
+
+
+def graph(request):
+	return render(request,'graphs.html')
 	

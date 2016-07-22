@@ -41,7 +41,7 @@ class Mentor(models.Model):
     branch = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.name
+        return self.user.get_full_name()
 
 class Workshop(models.Model):
     name = models.CharField(max_length=128)
@@ -77,6 +77,7 @@ class Program(models.Model):
     class Meta:
         app_label = 'app'
 
+
 class SurveyResponse(models.Model):
     student = models.ForeignKey(Student)
     q1 = models.CharField(max_length=128)
@@ -89,4 +90,17 @@ class SurveyResponse(models.Model):
 
     class Meta:
         app_label = 'app'
+
+
+class RelationMentor(models.Model):
+    student = models.ForeignKey(Student)
+    mentor = models.ForeignKey(Mentor)
+
+    def __str__(self):
+        return str(self.student) + ' <3 ' + str(self.mentor)
+
+    class Meta:
+        app_label = 'app'
+
+
 

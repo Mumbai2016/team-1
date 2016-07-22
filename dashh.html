@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumino - Dashboard</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/bar.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="js/lumino.glyphs.js"></script>
+<script src="js/radar.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+	  var data = new google.visualization.arrayToDataTable([
+          ['Age', 'Male', 'Female'],
+          ['12-13 Yrs', 2, 3],
+          ['14-15 Yrs', 84, 95],
+          ['16-17 Yrs', 630, 695],
+          ['18 and above', 838, 916]
+          
+        ]);
+
+        var options = {
+          width: 900,
+          chart: {
+            title: 'Age Wise VS Gender',
+            
+          },
+          series: {
+            0: { axis: 'age' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'gender' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            y: {
+              distance: {label: 'male'}, // Left y-axis.
+              brightness: {side: 'male', label: 'female'} // Right y-axis.
+            }
+          }
+        };
+        var data1 = new google.visualization.arrayToDataTable([
+          ['Current Status', 'Q1', 'Q2'],
+          ['Less than 3 months', 382, 386],
+          ['Inactive', 130, 132],
+          ['Secondary School', 23, 124],
+          ['Drop out', 30, 74]
+          
+        ]);
+
+        var options1 = {
+          width: 900,
+          chart: {
+            title: 'Tracking Status VS quarters',
+            
+          },
+          series: {
+            0: { axis: 'quarter' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'status' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            y: {
+              distance: {label: 'Q1'}, // Left y-axis.
+              brightness: {side: 'quarter', label: 'Q2'} // Right y-axis.
+            }
+          }
+        };
+
+      var chart = new google.charts.Bar(document.getElementById('dual_y_div'));
+      chart.draw(data, options);
+	        var chart1 = new google.charts.Bar(document.getElementById('dual_y_div1'));
+      chart1.draw(data1, options1);
+    };
+    </script>
+		<script type="text/javascript">
+$(document).ready(function(){
+    barChart();
+    
+    $(window).resize(function(){
+        barChart();
+    });
+    
+    function barChart(){
+        $('.bar-chart').find('.item-progress').each(function(){
+            var itemProgress = $(this),
+            itemProgressWidth = $(this).parent().width() * ($(this).data('percent') / 100);
+            itemProgress.css('width', itemProgressWidth);
+        });
+    };
+});
+</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span>Dream a Dream</a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+							<li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		
+			<div class="row">
+		
+      <div class="well">
+	  
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="location1" class="control-label">Program</label>
+            <select class="form-control" name="" id="location1">
+              <option value="">Choose</option>
+              <option value="">Career Awareness Programme</option>
+              <option value="">Life Skills Development</option>
+			  <option value="">Support Calls</option>
+			  <option value="">Matched with mentor</option>
+			  <option value="">Graduate Engagement</option>
+			  <option value="">Last Mile Support Program </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="type1" class="control-label">Age Range</label>
+			<div class="input-group">
+              <div class="input-group-addon" id="basic-addon1">Min</div>
+              <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="form-group">
+            
+            <div class="input-group">
+              <div class="input-group-addon" id="basic-addon2">Max</div>
+              <input type="text" class="form-control" id="priceto" aria-describedby="basic-addon1">
+            </div>
+          </div>
+		  <div class="form-group">
+		  <label for="type1" class="control-label">Start Date</label>
+           <input id="input-date" type="date" value="2014-10-31">
+      <span class="result"></span>
+          </div>
+		  <div class="form-group">
+		  <label for="type1" class="control-label">End Date</label>
+           <input id="input-date" type="date" value="2014-10-31">
+      <span class="result"></span>
+          </div>
+          <div class="form-group">
+            <label for="location1" class="control-label">Gender</label>
+            <select class="form-control" name="" id="location1">
+              <option value="">Choose</option>
+              <option value="">Male</option>
+              <option value="">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location1" class="control-label">Status</label>
+            <select class="form-control" name="" id="location1">
+              <option value="">Choose</option>
+              <option value="">Less than 3 months</option>
+				<option value="">Inactive</option>
+			  <option value="">Secondary/School</option>
+			   <option value="">Senior Secondary/PUC</option>
+				<option value="">Graduation/Degreex</option>
+              <option value="">Diploma</option>
+            </select>
+          </div>
+          <p class="text-center"><a href="#" class="btn btn-danger glyphicon glyphicon-search" role="button"></a></p>
+        </form>
+      </div>
+    
+	</div>
+
+	</div><!--/.sidebar-->
+	
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<!--<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active">Icons</li>
+			</ol>-->
+		<!--</div><!--/.row-->
+												
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Dashboard</h1>
+			</div>
+		</div><!--/.row-->
+		
+		
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Site Traffic Overview</div>
+    <div id="dual_y_div" style="width: 900px; height: 500px;"></div>
+					</div><!-- //.bar -->
+                    </div>
+										<!-- //.item -->
+					
+				
+		</div><!--/.row-->
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+    <div id="dual_y_div1" style="width: 900px; height: 500px;"></div>
+					<div id="chart_div2"></div>
+					</div><!-- //.bar -->
+                    </div>
+                    <!-- //.item -->
+					
+				
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Dropout Table</div>
+					<div class="panel-body">
+						<table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						    <thead>
+						    <tr>
+						        <th data-field="total" data-checkbox="true" >Total No. of drop outs in last quarter </th>
+						        <th data-field="meaningfully" data-sortable="true">No.of Young people meaningfully engaged since last quarter</th>
+						        <th data-field="lms"  data-sortable="true">No.of Young people receiving LMS Program among drop-outs</th>
+						        <th data-field="continue" data-sortable="true">No.of Young people who continue to be drop outs even in this quarter</th>
+								<th data-field="unreachable" data-sortable="true">No.of young people not reachable from last quarter</th>
+						    </tr>
+						    </thead>
+							<th>
+							<tr>
+							<td align="center">121</td>
+							<td align="center">33</td>
+							<td align="center">5</td>
+							<td align="center">72</td>
+							<td align="center">16</td>
+							</tr>
+							
+							</th>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Student Details</div>
+					<div class="panel-body">
+						<table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						    <thead>
+						    <tr>
+						        <th data-field="total" data-checkbox="true" >CC1 Unique ID#</th>
+								<th data-field="total" data-checkbox="true" >FName</th>
+								<th data-field="total" data-checkbox="true" >LName</th>
+								<th data-field="total" data-checkbox="true" >Gender</th>
+								<th data-field="total" data-checkbox="true" >Age</th>
+								<th data-field="total" data-checkbox="true" >Mobile</th>
+						    </tr>
+						    </thead>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-001</td>
+							<td >Afreen</td>
+							<td >K</td>
+							<td >F</td>
+							<td >20</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-003</td>
+							<td >Ajay</td>
+							<td >R</td>
+							<td >M</td>
+							<td >20</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-007</td>
+							<td >Ammu</td>
+							<td >PC</td>
+							<td >F</td>
+							<td >19</td>
+							<td >9545327106</td>
+							</tr>
+							
+								<tr>
+							<td >DCC-LMSP1-2013-14-011</td>
+							<td >Arunkumar</td>
+							<td >M</td>
+							<td >M</td>
+							<td >19</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-012</td>
+							<td >Aruna</td>
+							<td >B</td>
+							<td >F</td>
+							<td >19</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-022</td>
+							<td >Bala Andrew</td>
+							<td >C</td>
+							<td >M</td>
+							<td >18</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-032</td>
+							<td >Damodar Gowda</td>
+							<td >A</td>
+							<td >M</td>
+							<td >19</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-037</td>
+							<td >Deepu</td>
+							<td >N</td>
+							<td >F</td>
+							<td >19</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-043</td>
+							<td >Fakeerabi</td>
+							<td >R</td>
+							<td >M</td>
+							<td >19</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-050</td>
+							<td >Harikumar</td>
+							<td >V</td>
+							<td >M</td>
+							<td >19</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-053</td>
+							<td >Harshini</td>
+							<td >SR</td>
+							<td >F</td>
+							<td >20</td>
+							<td >9545327106</td>
+							</tr>
+							
+							<tr>
+							<td >DCC-LMSP1-2013-14-055</td>
+							<td >Husna Banu</td>
+							<td >J</td>
+							<td >F</td>
+							<td >15</td>
+							<td >9545327106</td>
+							</tr>
+					
+							
+							
+						
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
+			
+			
+			
+		</div><!--/.row-->
+	</div>	<!--/.main-->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		$('#calendar').datepicker({
+		});
+
+		!function ($) {
+		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+		        $(this).find('em:first').toggleClass("glyphicon-minus");      
+		    }); 
+		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>
