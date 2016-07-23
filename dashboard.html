@@ -18,7 +18,90 @@
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
 <![endif]-->
-<script type="text/javascript">
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+
+          // Load the Visualization API and the piechart package.
+          google.load('visualization', '1.0', {'packages':['corechart']});
+
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.setOnLoadCallback(drawChart);
+
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');    
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Mushrooms', 3],
+              ['Onions', 1],
+              ['Olives', 1],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
+            // Create the data table.
+            var data2 = new google.visualization.DataTable();
+            data2.addColumn('string', 'Topping');
+            data2.addColumn('number', 'Slices');
+            data2.addRows([
+              ['Mushrooms', 3],
+              ['Onions', 1],
+              ['Olives', 15],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
+
+            var data3 = new google.visualization.DataTable();
+            data3.addColumn('string', 'Year');
+            data3.addColumn('number', 'Sales');
+            data3.addColumn('number', 'Expenses');
+            data3.addRows([
+              ['2004', 1000, 400],
+              ['2005', 1170, 460],
+              ['2006',  860, 580],
+              ['2007', 1030, 540]
+            ]);
+var data3 = google.visualization.arrayToDataTable([
+         ['Element', 'Density', { role: 'style' }],
+         ['Copper', 8.94, '#b87333'],            // RGB value
+         ['Silver', 10.49, 'silver'],            // English color name
+         ['Gold', 19.30, 'gold'],
+
+       ['Platinum', 21.45, 'color: #e5e4e2' ], // CSS-style declaration
+      ]);
+            // Set chart options
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                           'width':400,
+                           'height':300,
+						   pieHole:0.4};
+            // Set chart options
+            var options2 = {'title':'How Much Pizza You Ate Last Night',
+                           'width':400,
+                           'height':300};
+            // Set chart options
+            var options3 = {'title':'Line chart',
+                           'width':400,
+                           'height':300};
+						   var options4 = {'title':'Bar chart',
+                           'width':400,
+                           'height':300};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
+            chart2.draw(data2, options2);
+            var chart3 = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
+            chart3.draw(data3, options3);
+			
+          }
+        </script>
+		<script type="text/javascript">
 $(document).ready(function(){
     barChart();
     
@@ -154,65 +237,23 @@ $(document).ready(function(){
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">Site Traffic Overview</div>
-					 <div class="bar-chart">
-                
-					<div class="chart clearfix">
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">92%</span>
-            
-                            <div class="item-progress" data-percent="92">
-                                <span class="title">12-13</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
+				     <div id="chart_div2"></div>
+					</div><!-- //.bar -->
                     </div>
                     <!-- //.item -->
-                    
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">71%</span>
-            
-                            <div class="item-progress" data-percent="71">
-                                <span class="title">14-15</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
-                    </div>
-                    <!-- //.item -->
-                    
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">82%</span>
-            
-                            <div class="item-progress" data-percent="82">
-                                <span class="title">16-17</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
-                    </div>
-                    <!-- //.item -->
-            
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">67%</span>
-            
-                            <div class="item-progress" data-percent="67">
-                                <span class="title">18 and above</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
-                    </div>
-                    <!-- //.item -->
-					</div>
-				</div>
+					
 				
-				</div>
-			</div>
+		</div><!--/.row-->
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Chart 2</div>
+					<div id="chart_div2"></div>
+					</div><!-- //.bar -->
+                    </div>
+                    <!-- //.item -->
+					
+				
 		</div><!--/.row-->
 		
 		<div class="row">
@@ -246,6 +287,56 @@ $(document).ready(function(){
 			</div>
 		</div><!--/.row-->	
 		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Student Details</div>
+					<div class="panel-body">
+						<table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						    <thead>
+						    <tr>
+						        <th data-field="total" data-checkbox="true" >CC1 Unique ID#</th>
+								<th data-field="total" data-checkbox="true" >FName</th>
+								<th data-field="total" data-checkbox="true" >LName</th>
+								<th data-field="total" data-checkbox="true" >Gender</th>
+								<th data-field="total" data-checkbox="true" >Age</th>
+								<th data-field="total" data-checkbox="true" >Mobile</th>
+						    </tr>
+						    </thead>
+							
+							<tr>
+							<td align="center">DCC-LMSP1-2013-14-001</td>
+							<td align="center">Afreen</td>
+							<td align="center">K</td>
+							<td align="center">F</td>
+							<td align="center">20</td>
+							<td align="center">9545327106</td>
+							</tr>
+							
+							<tr>
+							<td align="center">DCC-LMSP1-2013-14-003</td>
+							<td align="center">Ajay</td>
+							<td align="center">R</td>
+							<td align="center">M</td>
+							<td align="center">20</td>
+							<td align="center">9545327106</td>
+							</tr>
+							
+							<tr>
+							<td align="center">DCC-LMSP1-2013-14-007</td>
+							<td align="center">Ammu</td>
+							<td align="center">PC</td>
+							<td align="center">F</td>
+							<td align="center">19</td>
+							<td align="center">9545327106</td>
+							</tr>
+							
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
 			
 			
 			
