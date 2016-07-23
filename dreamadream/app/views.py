@@ -17,4 +17,12 @@ def workshop(request):
 	year = today.year
 	details = workshop.objects.filter(date__year=year, date__month=month)
 	return details
+
+
+def get_status_by_no(request):
+	if request.method == 'GET':
+		number = int(request.GET['phone'])
+		status = Student.objects.get(id = number).current_status
+
+	return HttpResponse(status)
 	
