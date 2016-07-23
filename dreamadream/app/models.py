@@ -10,12 +10,13 @@ class Centre(models.Model):
     def __str__(self):
         return self.name
 
+
     class Meta:
         app_label = 'app'
 
 
 class Student(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     fname = models.CharField(max_length=128)
     lname = models.CharField(max_length=128)
     gender = models.CharField(max_length=128)
@@ -33,7 +34,7 @@ class Student(models.Model):
 
 
 class Mentor(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     gender = models.CharField(max_length=128)
     dob = models.DateTimeField()
     branch = models.CharField(max_length=128)
@@ -54,34 +55,32 @@ class Workshop(models.Model):
 
 
 class Meeting(models.Model):
-	mentor = models.ForeignKey(Mentor)
-	student = models.ForeignKey(Student)
+    mentor = models.ForeignKey(Mentor)
+    student = models.ForeignKey(Student)
     time = models.DateTimeField()
     feedback = models.CharField(max_length=128, blank=True)
 
     def __str__(self):
-    	return self.feedback
+        return self.feedback
 
     class Meta:
         app_label = 'app'
 
 
 class Program(models.Model):
-	pname = models.CharField(max_length=128)
+    pname = models.CharField(max_length=128)
 
     def __str__(self):
-    	return self.pname
-
+        return self.pname
 
     class Meta:
         app_label = 'app'
-		
 
 class SurveyResponse(models.Model):
-	student = models.ForeignKey(Student)
-	q1 = models.CharField(max_length=128)
-	q2 = models.CharField(max_length=128)
-	date = models.DateTimeField()
+    student = models.ForeignKey(Student)
+    q1 = models.CharField(max_length=128)
+    q2 = models.CharField(max_length=128)
+    date = models.DateTimeField()
 
     def __str__(self):
     	return self.student
