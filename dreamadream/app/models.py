@@ -51,3 +51,16 @@ class Workshop(models.Model):
 
     class Meta:
         app_label = 'app'
+
+
+class Meeting(models.Model):
+	mentor = models.ForeignKey(Mentor)
+	student = models.ForeignKey(Student)
+    time = models.DateTimeField()
+    feedback = models.CharField(max_length=128, blank=True)
+
+    def __str__(self):
+    	return self.feedback
+
+    class Meta:
+        app_label = 'app'
