@@ -1,25 +1,7 @@
 <?php
-
 error_reporting(E_ALL);
 require("class.phpmailer.php");
-
-// Check for empty fields
-if(empty($_POST['name'])  		||
-   empty($_POST['email']) 		||
-   empty($_POST['phone']) 		||
-   empty($_POST['message'])	||
-   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
-   {
-	echo "No arguments Provided!";
-	return false;
-   }
-   
-   $name = $_POST['name'];
-$email_address = $_POST['email'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
-   
-   $mail = new PHPMailer();
+$mail = new PHPMailer();
 $mail->IsSMTP(); // set mailer to use SMTP
 $mail->SMTPDebug  = 2;
 $mail->From = "smsjsgkjl@gmail.com";
@@ -33,14 +15,15 @@ $mail->Password = "scoremoney"; // SMTP password
 $mail->AddAddress("mihir.sj@somaiya.edu", "Mihir");
 $mail->AddAddress("sahil.limbasiya@somaiya.edu", "Sahil");
 $mail->AddAddress("sanatkumar.k@somaiya.edu", "Sanat"); //replace myname and mypassword to yours
-$mail->AddReplyTo("$email_address", "$name");
+$mail->AddReplyTo("smsjsgkjl@gmail.com", "SMS");
 $mail->WordWrap = 50; // set word wrap
 //$mail->AddAttachment("c:\\temp\\js-bak.sql"); // add attachments
 //$mail->AddAttachment("c:/temp/11-10-00.zip");
 
 $mail->IsHTML(true); // set email format to HTML
-$mail->Subject = "Website Contact Form:  $name";
-$mail->Body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+$mail->Subject = 'SMS ROX';
+$mail->Body = 'ENJOY EMAIL MATES';
 
-if($mail->Send()) return true;		
+if($mail->Send()) {echo "Send mail successfully";}
+else {echo "Send mail fail";}
 ?>
