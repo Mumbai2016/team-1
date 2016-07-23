@@ -30,3 +30,13 @@ class Student(models.Model):
 
     class Meta:
         app_label = 'app'
+
+
+class Mentor(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+    gender = models.CharField(max_length=128)
+    dob = models.DateTimeField()
+    branch = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.name
