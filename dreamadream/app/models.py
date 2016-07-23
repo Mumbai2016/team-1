@@ -40,3 +40,14 @@ class Mentor(models.Model):
 
     def __str__(self):
         return self.name
+
+class Workshop(models.Model):
+    name = models.CharField(max_length=128)
+    date = models.DateTimeField()
+    program = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        app_label = 'app'
