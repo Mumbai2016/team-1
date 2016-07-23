@@ -18,7 +18,7 @@ def update_status(request):
 	a = ['Less than 3 months', 'Inactive', 'Secondary/School', 'Senior Secondary/PUC', 'Diploma', 'Graduation/Degree', 'Employed', 'Vocation training', 'Student and Employed', 'Drop out', 'Married', 'Not reachable']
 	b = Student.objects.get(id = student_id)
 	b.current_status = a[i]
-	# b.save()
+	b.save()
 
 
 def workshop(request):
