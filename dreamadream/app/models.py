@@ -64,3 +64,15 @@ class Meeting(models.Model):
 
     class Meta:
         app_label = 'app'
+
+
+class Program(models.Model):
+	pname = models.CharField(max_length=128)
+
+    def __str__(self):
+    	return self.pname
+
+
+    class Meta:
+        app_label = 'app'
+		
