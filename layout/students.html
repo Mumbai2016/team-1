@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dream A Dream</title>
+    <title>Student</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
                         <a class="page-scroll" href="#services">Dashboard</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Login</a>
+                        <a class="page-scroll" href="#portfolio">Logout</a>
                     </li>
                     <!-- <li>
                         <a class="page-scroll" href="#about">About</a>
@@ -72,77 +72,27 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Dream a Dream empowers young people from vulnerable backgrounds to overcome adversity and 
-				flourish in a fast changing world, using a creative life skills approach.</div>
-                <a href="#services" class="page-scroll btn btn-xl">Lets get Started</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Services Section -->
-   <!--  <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    --> <!-- Portfolio Grid Section -->
+   <!--  Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Login</h2>
+                    <h2 class="section-heading">Profile Manager</h2>
                     
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-8 portfolio-item">
-                    <a href="#studentlogin" class="portfolio-link" data-toggle="modal">
+                    <a href="#form" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/update.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Student Login</h4>
+                        <h4>Update Profile</h4>
                     </div>
                 </div><!-- 
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -166,10 +116,10 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/view.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Mentor</h4>
+                        <h4>View Profile</h4>
                     </div>
                 </div><!-- 
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -502,148 +452,135 @@
     </div>
 
     <!-- teacherlogin -->
-    <div class="portfolio-modal modal fade" id="teacherlogin" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="container">    
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-            <div class="panel panel-info" >
-                    <div class="panel-heading">
-                        <div class="panel-title">Sign In</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
-                    </div>     
+    <div class="portfolio-modal modal fade" id="form" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="container">
 
-                    <div style="padding-top:30px" class="panel-body" >
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
 
-                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                            
-                        <form id="loginform" class="form-horizontal" role="form">
-                                    
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
-                                    </div>
-                                
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-                                    </div>
-                                    
+<!-- Form Name -->
+<legend>Update Your Profile!</legend>
 
-                                
-                            <div class="input-group">
-                                      <div class="checkbox">
-                                        <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                        </label>
-                                      </div>
-                                    </div>
+<!-- Text input--> 
 
+<div class="form-group">
+  <label class="col-md-4 control-label">What is new Status?</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="first_name" placeholder="Status" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 
-                                <div style="margin-top:10px" class="form-group">
-                                    <!-- Button -->
+<!-- 
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 
-                                    <div class="col-sm-12 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                                      <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-
-                                    </div>
-                                </div>
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 
 
-                                <div class="form-group">
-                                    <div class="col-md-12 control">
-                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                            Don't have an account! 
-                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                            Sign Up Here
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>    
-                            </form>     
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Phone #</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Address</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="address" placeholder="Address" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label">City</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="city" placeholder="city" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 
 
 
-                        </div>                     
-                    </div>  
-        </div>
-        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <div class="panel-title">Sign Up</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
-                        </div>  
-                        <div class="panel-body" >
-                            <form id="signupform" class="form-horizontal" role="form">
-                                
-                                <div id="signupalert" style="display:none" class="alert alert-danger">
-                                    <p>Error:</p>
-                                    <span></span>
-                                </div>
-                                    
-                                
-                                  
-                                <div class="form-group">
-                                    <label for="email" class="col-md-3 control-label">Email</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
-                                    </div>
-                                </div>
-                                    
-                                <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">First Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Last Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-md-3 control-label">Password</label>
-                                    <div class="col-md-9">
-                                        <input type="password" class="form-control" name="passwd" placeholder="Password">
-                                    </div>
-                                </div>
-                                    
-                                <div class="form-group">
-                                    <label for="icode" class="col-md-3 control-label">Invitation Code</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="icode" placeholder="">
-                                    </div>
-                                </div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Zip Code</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+    </div>
+</div>
+</div>
 
-                                <div class="form-group">
-                                    <!-- Button -->                                        
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-                                        <span style="margin-left:8px;">or</span>  
-                                    </div>
-                                </div>
-                                
-                                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-                                    
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
-                                    </div>                                           
-                                        
-                                </div>
-                                
-                                
-                                
-                            </form>
-                         </div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Website or domain name</label>  
+   <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input name="website" placeholder="Website or domain name" class="form-control" type="text">
+    </div>
+  </div>
+</div -->>
+
+<!-- radio checks -->
+ <div class="form-group">
+                        <label class="col-md-4 control-label">Are you intrested in Workshops?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="yes" /> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="no" /> No
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
-               
-               
-                
-         </div> 
-    </div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+</div>
     
-    </div>
 
     <!-- studentlogin -->
     <div class="portfolio-modal modal fade" id="studentlogin" tabindex="-1" role="dialog" aria-hidden="true">
