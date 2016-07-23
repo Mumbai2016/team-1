@@ -46,30 +46,72 @@
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		
-		<ul class="nav menu">
-			<li class="parent ">
-				<a href="#">
-					<span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Tables 
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Gender wise
-						</a>
-					</li>
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Age Wise
-						</a>
-					</li>
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Center wise
-						</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
+			<div class="row">
+		
+      <div class="well">
+      <h3 align="center">Search Filter</h3>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="location1" class="control-label">Program</label>
+            <select class="form-control" name="" id="location1">
+              <option value="">Choose</option>
+              <option value="">Career Awareness Programme</option>
+              <option value="">Life Skills Development</option>
+			  <option value="">Support Calls</option>
+			  <option value="">Matched with mentor</option>
+			  <option value="">Graduate Engagement</option>
+			  <option value="">Last Mile Support Program </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="type1" class="control-label">Age Range</label>
+			<div class="input-group">
+              <div class="input-group-addon" id="basic-addon1">Min</div>
+              <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="form-group">
+            
+            <div class="input-group">
+              <div class="input-group-addon" id="basic-addon2">Max</div>
+              <input type="text" class="form-control" id="priceto" aria-describedby="basic-addon1">
+            </div>
+          </div>
+		  <div class="form-group">
+		  <label for="type1" class="control-label">Start Date</label>
+           <input id="input-date" type="date" value="2014-10-31">
+      <span class="result"></span>
+          </div>
+		  <div class="form-group">
+		  <label for="type1" class="control-label">End Date</label>
+           <input id="input-date" type="date" value="2014-10-31">
+      <span class="result"></span>
+          </div>
+          <div class="form-group">
+            <label for="location1" class="control-label">Gender</label>
+            <select class="form-control" name="" id="location1">
+              <option value="">Choose</option>
+              <option value="">Male</option>
+              <option value="">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location1" class="control-label">Status</label>
+            <select class="form-control" name="" id="location1">
+              <option value="">Choose</option>
+              <option value="">Less than 3 months</option>
+				<option value="">Inactive</option>
+			  <option value="">Secondary/School</option>
+			   <option value="">Senior Secondary/PUC</option>
+				<option value="">Graduation/Degreex</option>
+              <option value="">Diploma</option>
+            </select>
+          </div>
+          <p class="text-center"><a href="#" class="btn btn-danger glyphicon glyphicon-search" role="button"></a></p>
+        </form>
+      </div>
+    
+	</div>
 
 	</div><!--/.sidebar-->
 	
