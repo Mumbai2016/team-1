@@ -3,38 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lumino - Dashboard</title>
+<title>Lumino - Tables</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
-<link href="css/bar.css" rel="stylesheet">
 
 <!--Icons-->
 <script src="js/lumino.glyphs.js"></script>
-<script src="js/radar.js"></script>
 
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
 <![endif]-->
-<script type="text/javascript">
-$(document).ready(function(){
-    barChart();
-    
-    $(window).resize(function(){
-        barChart();
-    });
-    
-    function barChart(){
-        $('.bar-chart').find('.item-progress').each(function(){
-            var itemProgress = $(this),
-            itemProgressWidth = $(this).parent().width() * ($(this).data('percent') / 100);
-            itemProgress.css('width', itemProgressWidth);
-        });
-    };
-});
-</script>
+
 </head>
 
 <body>
@@ -47,7 +30,7 @@ $(document).ready(function(){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>Dream a Dream</a>
+				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
@@ -62,7 +45,7 @@ $(document).ready(function(){
 							
 		</div><!-- /.container-fluid -->
 	</nav>
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+			<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		
 			<div class="row">
 		
@@ -132,105 +115,39 @@ $(document).ready(function(){
 	</div>
 
 	</div><!--/.sidebar-->
-	
+
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
-		<!--<div class="row">
+		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
 				<li class="active">Icons</li>
-			</ol>-->
-		<!--</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Dashboard</h1>
-			</div>
+			</ol>
 		</div><!--/.row-->
 		
-		
-		
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Site Traffic Overview</div>
-					 <div class="bar-chart">
-                
-					<div class="chart clearfix">
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">92%</span>
-            
-                            <div class="item-progress" data-percent="92">
-                                <span class="title">12-13</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
-                    </div>
-                    <!-- //.item -->
-                    
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">71%</span>
-            
-                            <div class="item-progress" data-percent="71">
-                                <span class="title">14-15</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
-                    </div>
-                    <!-- //.item -->
-                    
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">82%</span>
-            
-                            <div class="item-progress" data-percent="82">
-                                <span class="title">16-17</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
-                    </div>
-                    <!-- //.item -->
-            
-                    <div class="item">
-                        <div class="bar">
-                            <span class="percent">67%</span>
-            
-                            <div class="item-progress" data-percent="67">
-                                <span class="title">18 and above</span>
-                            </div>
-                            <!-- //.item-progress -->
-                        </div>
-                        <!-- //.bar -->
-                    </div>
-                    <!-- //.item -->
-					</div>
-				</div>
+				<h1 class="page-header">Tables</h1>
+			</div>
+		</div><!--/.row-->
 				
-				</div>
-			</div>
-		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Dropout Table</div>
+					<div class="panel-heading">Dropout - Tracking Status</div>
 					<div class="panel-body">
-						<table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table style="word-wrap:break-word" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
-						        <th data-field="total" data-checkbox="true" >Total No. of drop outs in last quarter </th>
-						        <th data-field="meaningfully" data-sortable="true">No.of Young people meaningfully engaged since last quarter</th>
-						        <th data-field="lms"  data-sortable="true">No.of Young people receiving LMS Program among drop-outs</th>
-						        <th data-field="continue" data-sortable="true">No.of Young people who continue to be drop outs even in this quarter</th>
-								<th data-field="unreachable" data-sortable="true">No.of young people not reachable from last quarter</th>
+						         <th data-field="total" data-checkbox="true" >Total No. of drop outs in last quarter </th>
+						        <th data-field="meaningfully" data-sortable="true">Meaningfully engaged since last quarter</th>
+						        <th data-field="lms"  data-sortable="true">Receiving LMS Program among drop-outs</th>
+						        <th data-field="continue" data-sortable="true">Continue to be drop outs even in this quarter</th>
+								<th data-field="unreachable" data-sortable="true">Not reachable from last quarter</th>
 						    </tr>
 						    </thead>
-							<th>
+							
 							<tr>
 							<td align="center">121</td>
 							<td align="center">33</td>
@@ -239,18 +156,44 @@ $(document).ready(function(){
 							<td align="center">16</td>
 							</tr>
 							
-							</th>
+							
 						</table>
 					</div>
 				</div>
 			</div>
 		</div><!--/.row-->	
-		
-			
-			
-			
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Dropout - Tracking Status</div>
+					<div class="panel-body">
+						<table style="word-wrap:break-word" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						    <thead>
+						    <tr>
+						         <th data-field="total" data-checkbox="true" >Total No. of drop outs in last quarter </th>
+						        <th data-field="meaningfully" data-sortable="true">Meaningfully engaged since last quarter</th>
+						        <th data-field="lms"  data-sortable="true">Receiving LMS Program among drop-outs</th>
+						        <th data-field="continue" data-sortable="true">Continue to be drop outs even in this quarter</th>
+								<th data-field="unreachable" data-sortable="true">Not reachable from last quarter</th>
+						    </tr>
+						    </thead>
+							
+							<tr>
+							<td align="center">121</td>
+							<td align="center">33</td>
+							<td align="center">5</td>
+							<td align="center">72</td>
+							<td align="center">16</td>
+							</tr>
+							
+							
+						</table>
+					</div>
+				</div>
+			</div>
 		</div><!--/.row-->
-	</div>	<!--/.main-->
+		
+	</div><!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -259,15 +202,13 @@ $(document).ready(function(){
 	<script src="js/easypiechart.js"></script>
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.js"></script>
 	<script>
-		$('#calendar').datepicker({
-		});
-
 		!function ($) {
-		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
-		        $(this).find('em:first').toggleClass("glyphicon-minus");      
-		    }); 
-		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
+				$(this).find('em:first').toggleClass("glyphicon-minus");	  
+			}); 
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
 		}(window.jQuery);
 
 		$(window).on('resize', function () {
