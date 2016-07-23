@@ -25,6 +25,7 @@ class Student(models.Model):
     last_track_date = models.DateTimeField()
     date_joined = models.DateTimeField()
     current_status = models.CharField(max_length=300)
+    phone = models.CharField(max_length=100)
 
     def __str__(self):
         return self.fname
