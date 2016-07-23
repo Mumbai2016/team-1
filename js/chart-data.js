@@ -3,7 +3,7 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 	var lineChartData = {
 			labels : ["January","February","March","April","May","June","July"],
 			datasets : [
-				{
+				/*{
 					label: "My First dataset",
 					fillColor : "rgba(220,220,220,0.2)",
 					strokeColor : "rgba(220,220,220,1)",
@@ -12,7 +12,7 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-				},
+				},*/
 				{
 					label: "My Second dataset",
 					fillColor : "rgba(48, 164, 255, 0.2)",
@@ -104,6 +104,32 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 	
 				];
 
+	var polarChartData = {
+    datasets: [{
+        data: [
+            11,
+            16,
+            7,
+            3,
+            14
+        ],
+        backgroundColor: [
+            "#FF6384",
+            "#4BC0C0",
+            "#FFCE56",
+            "#E7E9ED",
+            "#36A2EB"
+        ],
+        label: 'My dataset' // for legend
+    }],
+    labels: [
+        "Red",
+        "Green",
+        "Yellow",
+        "Grey",
+        "Blue"
+    ]
+};
 window.onload = function(){
 	var chart1 = document.getElementById("line-chart").getContext("2d");
 	window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -119,5 +145,8 @@ window.onload = function(){
 	var chart4 = document.getElementById("pie-chart").getContext("2d");
 	window.myPie = new Chart(chart4).Pie(pieData, {responsive : true
 	});
-	
+	var chart5 = document.getElementById("polar-chart").getContext("2d");
+	window.myPolar = new Chart(chart5).Polar(polarChartData, {
+		responsive: true
+	});
 };
