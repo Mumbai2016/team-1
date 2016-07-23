@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from models import Student,Workshop,RelationMentor
 import datetime
 import json
-# Create your views here.
 def current_status(request):
 	if request.method == 'GET':
 		student_id = int(request.GET['student_id'])

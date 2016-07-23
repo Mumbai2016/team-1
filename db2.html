@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lumino - Dashboard</title>
+<title>Dream a Dream</title>
 ​
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="#"><span>Live A</span> Dream</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
@@ -77,6 +77,7 @@
               <input type="text" class="form-control" id="priceto" aria-describedby="basic-addon1">
             </div>
           </div>
+		  
 		  <div class="form-group">
 		  <label for="type1" class="control-label">Start Date</label>
            <input id="input-date" type="date" value="2014-10-31">
@@ -103,11 +104,11 @@
 				<option value="">Inactive</option>
 			  <option value="">Secondary/School</option>
 			   <option value="">Senior Secondary/PUC</option>
-				<option value="">Graduation/Degreex</option>
+				<option value="">Graduation/Degree</option>
               <option value="">Diploma</option>
             </select>
           </div>
-          <p class="text-center"><a href="#" class="btn btn-danger glyphicon glyphicon-search" role="button"></a></p>
+          <p class="text-right"><a href="graphs.html"  class="btn btn-danger glyphicon glyphicon-search" ></a></p>
         </form>
       </div>
     
@@ -130,66 +131,12 @@
 				<h1 class="page-header">Dashboard</h1>
 			</div>
 		</div><!--/.row-->
-		
-		<!--<div class="row">
-			<div class="col-xs-12 col-md-6 col-lg-3">
-				<div class="panel panel-blue panel-widget ">
-					<div class="row no-padding">
-						<div class="col-sm-3 col-lg-5 widget-left">
-							<svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
-						</div>
-						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">120</div>
-							<div class="text-muted">Young People</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6 col-lg-3">
-				<div class="panel panel-orange panel-widget">
-					<div class="row no-padding">
-						<div class="col-sm-3 col-lg-5 widget-left">
-							<svg class="glyph stroked empty-message"><use xlink:href="#stroked-empty-message"></use></svg>
-						</div>
-						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">52</div>
-							<div class="text-muted">Active Young People</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6 col-lg-3">
-				<div class="panel panel-teal panel-widget">
-					<div class="row no-padding">
-						<div class="col-sm-3 col-lg-5 widget-left">
-							<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
-						</div>
-						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">24</div>
-							<div class="text-muted">Inactive Young People</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6 col-lg-3">
-				<div class="panel panel-red panel-widget">
-					<div class="row no-padding">
-						<div class="col-sm-3 col-lg-5 widget-left">
-							<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"></use></svg>
-						</div>
-						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">25.2k</div>
-							<div class="text-muted">Dropouts</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->
+	
 		
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Site Traffic Overview</div>
+					<div class="panel-heading">Enrollment over months</div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
 							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
@@ -204,7 +151,8 @@
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
 						<h4>Carrier Assurance</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">92%</span>
+						
+						<div class="easypiechart" id="easypiechart-blue" data-percent="67"><span class="percent">67%</span>
 						</div>
 					</div>
 				</div>
