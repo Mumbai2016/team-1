@@ -12,3 +12,14 @@ class Centre(models.Model):
 
     class Meta:
         app_label = 'app'
+
+
+class Student(models.Model):
+    fname = models.CharField(max_length=128)
+    lname = models.CharField(max_length=128)
+    gender = models.CharField(max_length=128)
+    dob = models.DateTimeField()
+    branch = models.CharField(max_length=128)
+    last_track_date = models.DateTimeField()
+    date_joined = models.DateTimeField()
+    current_status = models.CharField(max_length=300)
