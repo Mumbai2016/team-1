@@ -76,3 +76,16 @@ class Program(models.Model):
     class Meta:
         app_label = 'app'
 		
+
+class SurveyResponse(models.Model):
+	student = models.ForeignKey(Student)
+	q1 = models.CharField(max_length=128)
+	q2 = models.CharField(max_length=128)
+	date = models.DateTimeField()
+
+    def __str__(self):
+    	return self.student
+
+
+    class Meta:
+        app_label = 'app'
