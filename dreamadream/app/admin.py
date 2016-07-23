@@ -5,6 +5,7 @@ from models import *
 # Register your models here.
 
 admin.site.index_title = 'LiveADream'
+admin.site.site_title = 'LiveADream'
 
 admin.site.register(Centre)
 admin.site.register(Student)
