@@ -22,5 +22,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^getstatus/', views.current_status),
     url(r'^workshop/', views.workshop),
+    url(r'^update_status/', views.update_status),
+    url(r'^svm/', views.svm),
+    url(r'^get_relation/', views.get_relation),
     url(r'^jet/', include('jet.urls', 'jet')),
 ]

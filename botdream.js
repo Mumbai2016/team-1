@@ -2,15 +2,15 @@
 	    function MessageHandler(context, event) {
 	        context.console.log("test")
 	        var status = "demo";
-	        
+	        var input;
 	        var lastReceivedMsg = context.simpledb.roomleveldata.lastReceivedMsgReceived;
 	        var lastSentMsg = context.simpledb.roomleveldata.lastSentMsg;
 	        if(lastSentMsg == "Hello, I am the dream bot")
-	        {
-	        	context.sendResponse("Your previous status is marked as " + status);
-	        	context.sendResponse("Are there any changes in the status?");
-	        	context.sendResponse("Enter yes or no");
-	        	context.simpledb.roomleveldata.lastSentMsg = "Enter yes or no";
+	        {	
+	        	context.simplehttp.makeGet("ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/status/?student_id=1");
+	        	return;
+	        	
+	        	
 	        }
 	        else if (lastSentMsg == "Enter yes or no") 
 	        {
@@ -21,7 +21,11 @@
 	        	}
 	        	else if (event.message.toLowerCase() == "no") 
 	        	{
-	        		//getWorkshop code
+	        		context.simplehttp.makeGet('ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/workshop/');
+	        		var url = 'ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/workshop/';
+			        var param = "";
+			        var header = {"Content-Type": "application/x-www-form-urlencoded"};
+         			context.simplehttp.makePost(url,param,header);
 	        	}
 	        }
 	        else if (lastSentMsg == " 9.Married") 
@@ -29,24 +33,17 @@
 	        	switch(event.message)
 	        	{
 	        		case '1':
-
-	        			break;
 	        		case '2':
-	        			break;
 	        		case '3':
-	        			break;
 	        		case '4':
-	        			break;
 	        		case '5':
-	        			break;
 	        		case '6':
-	        			break;
 	        		case '7':
-	        			break;
 	        		case '8':
-	        			break;
 	        		case '9':
-	        			break;
+	        			input = event.message;
+	        			context.simplehttp.makeGet(ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/update_status/?id=input&student_id=1);
+	        			return;
 	        		default:
 	        			context.sendResponse("Error input. Please enter the choice again");
 	        			return;
@@ -56,10 +53,7 @@
 	        else if(event.message.toLowerCase() == "hi") {
 	            context.sendResponse("Hello, I am the dream bot");
 	            context.simpledb.roomleveldata.lastSentMsg = "Hello, I am the dream bot"
-	            context.sendResponse("Your previous status is marked as" + status);
-	        	context.sendResponse("Are there any changes in the status?");
-	        	context.sendResponse("Enter yes or no");
-	        	context.simpledb.roomleveldata.lastSentMsg = "Enter yes or no";
+	            context.simplehttp.makeGet("ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/getstatus/?student_id=1");
 	        }
 	        
 	        else if(event.message.toLowerCase() == "httptest") {
@@ -78,6 +72,26 @@
 	        context.simpledb.roomleveldata.lastReceivedMsgReceived = event.message;
 	        
 	    }
+
+
+	     function HttpResponseHandler(context, event) {
+           var JsonObj = JSON.parse(event.getresp);
+           var id = JsonObj.id
+           console.log("Here!")
+
+           if (id == 1) 
+           {
+           		var status = JsonObj.status;
+           		context.sendResponse("Your previous status is marked as " + status);
+           		context.sendResponse("Are there any changes in the status?");
+	        	context.sendResponse("Enter yes or no");
+	        	context.simpledb.roomleveldata.lastSentMsg = "Enter yes or no";
+           }
+           else if (id == 2) 
+           {
+           		var 
+           }
+       }
 	    /** Functions declared below are required **/
 	    function EventHandler(context, event) {
 	        if(! context.simpledb.botleveldata.numinstance)
@@ -87,10 +101,6 @@
 	        context.sendResponse("Thanks for adding me. You are:" + numinstances);
 	    }
 	
-	    function HttpResponseHandler(context, event) {
-	        // if(event.geturl === "http://ip-api.com/json")
-	        context.sendResponse(event.getresp);
-	    }
 	
 	    function DbGetHandler(context, event) {
 	        context.sendResponse("testdbput keyword was last get by:" + event.dbval);
