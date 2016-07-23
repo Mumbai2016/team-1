@@ -14,4 +14,5 @@ admin.site.register(Workshop)
 admin.site.register(Meeting)
 admin.site.register(Program)
 admin.site.register(RelationMentor)
+admin.site.register(SurveyResponse)
 
