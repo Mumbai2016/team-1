@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -15,6 +15,7 @@ class Centre(models.Model):
 
 
 class Student(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
     fname = models.CharField(max_length=128)
     lname = models.CharField(max_length=128)
     gender = models.CharField(max_length=128)
@@ -23,3 +24,9 @@ class Student(models.Model):
     last_track_date = models.DateTimeField()
     date_joined = models.DateTimeField()
     current_status = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.fname
+
+    class Meta:
+        app_label = 'app'
