@@ -220,7 +220,7 @@ $(document).ready(function(){
 				<div class="panel panel-default">
 					<div class="panel-heading">Student Details</div>
 					<div class="panel-body">
-						<table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table class="table" data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
 						        <th data-field="total" data-checkbox="true" >CC1 Unique ID#</th>
@@ -229,18 +229,18 @@ $(document).ready(function(){
 								<th data-field="total" data-checkbox="true" >Gender</th>
 								<th data-field="total" data-checkbox="true" >Date Of Birth</th>
 								<th data-field="total" data-checkbox="true" >Mobile</th>
-								<th data-field="total" data-checkbox="true" >Dropout Probability</th>
+								<th data-field="total" data-checkbox="true" >Dropout Risk</th>
 						    </tr>
 						    </thead>
 							{% for student in allStudents %}
 							<tr>
-							<td >student.id</td>
-							<td >student.fname</td>
-							<td >student.lname</td>
-							<td >student.gender</td>
-							<td >student.dob</td>
-							<td >student.phone</td>
-							<td >student.dropout_prob</td>
+							<td >{{student.id}}</td>
+							<td >{{student.fname}}</td>
+							<td >{{student.lname}}</td>
+							<td >{{student.gender}}</td>
+							<td >{{student.dob}}</td>
+							<td >{{student.phone}}</td>
+							<td >{{student.dropout_prob}}</td>
 							</tr>
 							{%endfor%}
 						</table>
