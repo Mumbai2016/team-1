@@ -26,6 +26,7 @@ class Student(models.Model):
     date_joined = models.DateTimeField()
     current_status = models.CharField(max_length=300)
     phone = models.CharField(max_length=100)
+    dropout_prob = models.FloatField(max_digits=2, decimal_places=2)
 
     def __str__(self):
         return self.fname

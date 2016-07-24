@@ -2,18 +2,10 @@
 	    function MessageHandler(context, event) {
 	        context.console.log("test")
 	        var status = "demo";
-	        var input;
+	        var input, headers;
 	        var lastReceivedMsg = context.simpledb.roomleveldata.lastReceivedMsgReceived;
 	        var lastSentMsg = context.simpledb.roomleveldata.lastSentMsg;
-	        if(lastSentMsg == "Hello, I am the dream bot")
-	        {	
-	        	context.simplehttp.makeGet("ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/status/?student_id=1");
-	        	return;
-	        	
-	        	
-	        }
-	        else if (lastSentMsg == "Enter yes or no") 
-	        {
+	        
 	        	if (event.message.toLowerCase() == "yes") 
 	        	{
 	        		context.sendResponse("Enter the option number for new status.\n 1.Secondary School\n 2.Senior Secondary School\n 3.Diploma\n 4.Graduation Degree\n 5.Employed\n 6.Vocational Training\n 7.Student and Employed\n 8.Dropout\n 9.Married");
@@ -21,49 +13,31 @@
 	        	}
 	        	else if (event.message.toLowerCase() == "no") 
 	        	{
-	        		context.simplehttp.makeGet('ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/workshop/');
+	        	    context.sendResponse("There are 3 workshops in this month. Contact the centre for more details");
+	        		//context.simplehttp.makeGet('ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/workshop/');
 	        		var url = 'ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/workshop/';
 			        var param = "";
 			        var header = {"Content-Type": "application/x-www-form-urlencoded"};
-         			context.simplehttp.makePost(url,param,header);
+         			//context.simplehttp.makePost(url,param,header);
 	        	}
-	        }
-	        else if (lastSentMsg == " 9.Married") 
-	        {
-	        	switch(event.message)
+	        	else if(parseInt(event.message) > 0 & parseInt(event.message) < 10 )
 	        	{
-	        		case '1':
-	        		case '2':
-	        		case '3':
-	        		case '4':
-	        		case '5':
-	        		case '6':
-	        		case '7':
-	        		case '8':
-	        		case '9':
-	        			input = event.message;
-	        			context.simplehttp.makeGet(ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/update_status/?id=input&student_id=1);
-	        			return;
-	        		default:
-	        			context.sendResponse("Error input. Please enter the choice again");
+	        	    input = event.message;
+	        			//context.simplehttp.makeGet("ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/update_status/?id=input&student_id=1");
+	        			context.sendResponse("Thanks for using the dream a dream service.");
 	        			return;
 	        	}
-	        }
+	        			
 	        
 	        else if(event.message.toLowerCase() == "hi") {
-	            context.sendResponse("Hello, I am the dream bot");
-	            context.simpledb.roomleveldata.lastSentMsg = "Hello, I am the dream bot"
-	            context.simplehttp.makeGet("ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/getstatus/?student_id=1");
-	        }
-	        
-	        else if(event.message.toLowerCase() == "httptest") {
-	            context.simplehttp.makeGet("http://ip-api.com/json");
-	        }
-	        else if(event.message.toLowerCase() == "testdbget") {
-	            context.simpledb.doGet("putby")
-	        }
-	        else if(event.message.toLowerCase() == "testdbput") {
-	            context.simpledb.doPut("putby", event.sender);
+	            context.sendResponse("Hello, I am the dream bot\nYour previous status is marked as student\nAre there any changes in the status?\nEnter yes or no");
+	        	context.simpledb.roomleveldata.lastSentMsg = "Enter yes or no";
+	            
+	            //context.simplehttp.makePost("ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/update_status/","phone=099204862",headers);
+	            //context.simplehttp.makeGet("ec2-54-179-162-31.ap-southeast-1.compute.amazonaws.com:1234/getstatus/?student_id=1");
+	            
+	            //context.simplehttp.makeGet("http://api.openweathermap.org/data/2.5/weather?q=London",headers);
+	            context.console.log("makeGet");
 	        }
 	        else {
 	            context.sendResponse('No keyword found : '+event.message); 
@@ -76,20 +50,21 @@
 
 	     function HttpResponseHandler(context, event) {
            var JsonObj = JSON.parse(event.getresp);
-           var id = JsonObj.id
-           console.log("Here!")
-
-           if (id == 1) 
+           var id = JsonObj["id"];
+           context.console.log("Here!");
+           if (1) 
            {
-           		var status = JsonObj.status;
-           		context.sendResponse("Your previous status is marked as " + status);
+           		var status = JsonObj["status"];
+           		context.sendResponse("Your previous status is marked as student");
            		context.sendResponse("Are there any changes in the status?");
 	        	context.sendResponse("Enter yes or no");
 	        	context.simpledb.roomleveldata.lastSentMsg = "Enter yes or no";
            }
            else if (id == 2) 
            {
-           		var 
+           		var count = JsonObj.count;
+           		var names = JsonObj.names;
+           		context.sendResponse("There are " + count + " workshops in this month. Contact the centre for more details");
            }
        }
 	    /** Functions declared below are required **/
