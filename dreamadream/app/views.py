@@ -53,3 +53,11 @@ def svm(request):
     clf = SVC()
     clf.fit(X, y)
     return HttpResponse(clf.predict([[-0.8, -1]]))
+
+
+def dash(request):
+	return render(request,'dashh.html')
+
+
+def graph(request):
+	return render(request,'graphs.html')
