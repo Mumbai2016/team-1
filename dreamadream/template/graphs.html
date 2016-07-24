@@ -9,6 +9,7 @@
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 <link href="{% static 'css/datepicker3.css' %}" rel="stylesheet">
 <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+<link href="{% static 'css/nav.css' %}" rel="stylesheet">
 ​
 <!--Icons-->
 <script src="{% static 'js/lumino.glyphs.js' %}"></script>
@@ -29,6 +30,14 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#"><span>Live A</span> Dream</a>
+				<ul class="topnav" id="myTopnav">
+  					<li><a href="#home">Home</a></li>
+  					<li><a href="dashh.html">Dashboard</a></li>
+  					<li><a href="bla.html">Tracker</a></li>
+  				<li class="icon">
+    				<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  				</li>
+			</ul>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
