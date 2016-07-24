@@ -5,6 +5,7 @@
 function recommendation(){
 var user = ["Male", "13", "Student", "Science","football","aa"];
 var ou = [["Male", "13", "Teen","Science","football","dance"] , ["Female","20","employed","Science","dance","hideandseek"] ] ;
+var mentor=["Sanatkumar","Monik"]
 var i;
 var j,k;
 var common=[0,0];
@@ -22,8 +23,6 @@ similarity[k]=common[k]/total[k];
 }
 }
 
-
-
 var best,index=0;
 best=similarity[0];
 
@@ -32,7 +31,7 @@ for (i = 1; i < ou.length; i++){
 	best=similarity[i];
 	index=i;
 	}
-	}document.getElementById("besti").innerHTML = best;
+	}document.getElementById("besti").innerHTML = mentor[index];
 	for (i =0; i < ou[index].length; i++)
 	document.getElementById("r"+i).innerHTML = ou[index][i];
 }
