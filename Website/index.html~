@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>NIRBHAY PHERWANI</title>
+</head>
+<body>
+<div id="left" style="position:fixed;width:30.5%;left:-5px;top:-5px;height:102%;background-color:#CA171B">
+	<div style="position:absolute;left:34%;top:15%;">
+		<img width="130px" height="130px" id ="imageb" src="b.png">
+	</div>
+	
+	<div style="color:#ffffff;position:absolute;left:16%;top:50%;font-family:Verdana">
+		<font size="5">NIRBHAY&nbsp<span><b>PHERWANI</b></span></font>
+	</div>
+
+	<div id="navigation" style="font-family:Verdana;position:absolute;top:70% ;width:100%;text-align:center;color:#ffffff">
+		<ul>
+		<li><a href="#about">About <b>Me</b></a></li>
+		<li><a href="#work">Work <b>Experience</b></a></li>
+		<li><a href="#the">The <b>Achievements</b></a></li>
+		<li><a href="#areas">Areas of <b>Expertise</b></a></li>
+		<li><a href="#academic">Academic <b>Section</b></a></li>
+		<li><a href="#contact">Contact <b>Me</b></a></li>
+		</ul>
+	</div>
+</div>
+<div id="right" style="position:absolute;left:30%;top:-5px;width:70%;height:100%;">
+	<div id="top" style="color:#ffffff;">
+		<p style="padding-left:15cm"><font size="5">CURRICULUM&nbsp<span><b>VITAE</b></span></font></p>
+	</div>
+	<div id="about" style="position:absolute;background-color:#DFDED4;color:#333333;width:100%;height:40%;top:85px;font-family:Verdana">
+		<p style="padding-top:1cm"><font size="5">ABOUT&nbsp<span><b>ME</b></span></font></p>
+		<p>There has always been a zeal inside my heart to sharpen my axe to meet the challenges of 21st Century Technology 			Developments. Inspired by the Eklavya of the Indian Mythology who wished to hone his talent to perfection, under the guidance 			of his Guru I believe your company will give me the proper direction and play a vital role for kindling the fire for 			technology inside me.
+		</p>
+	</div> 
+	
+	<div id="work" style="position:absolute;background-color:#D6D3C4;color:#333333;width:100%;height:95%;top:340px;font-family:Verdana">
+	<p><font size="5">WORK&nbsp<span><b>EXPERIENCE</b></span></font></p>
+	<p style="text-align:right"><font size="2"><i>June 2015, Mumbai</i><hr style="height:0.3em"></font></p>
+	<p>Internship at <b>Air India Ltd.</b> Worked as a Web Designer. Designed the website for Air India Engineering Services Limited 	(AIESL).</p>
+	<p style="text-align:right"><font size="2"><i>May 2015, Mumbai</i><hr style="height:0.3em"></font></p>
+	<p>
+	Internship at <b>AGM Pvt. Ltd.</b> as Graphics Designer. Designed a video based on Internet of things for their new initiative 		<b>Start Smart Expo.</b>
+	</p>
+	<p style="text-align:right"><font size="2"><i>May 2015, Mumbai</i><hr style="height:0.3em"></font></p>
+	<p>
+	Designed the company website for <b>Eskay Products, Mumbai.</b>
+	</p>
+	<p style="text-align:right"><font size="2"><i>July 2015, Mumbai</i><hr style="height:0.3em"></font></p>
+	<p>
+	Worked in the <b>Technical Assistance Committee (TAC)</b> for <b>Praxis Vesit</b> as a Video Designer. Designed the event and teaser 		videos for Praxis 2015.
+	</p>
+	<p style="text-align:right"><font size="2"><i> August 2014-March 2015, Mumbai</i><hr style="height:0.3em"></font></p>
+	<p>
+	Worked at the <b>Computer Society of India VESIT</b> as Jr. Technical Officer and managed technical events and workshops for them. In 		addition to that also made event videos for them using <b>Adobe</b> Software.</p>
+	</div>
+
+	<div id="the" style="position:absolute;background-color:#DFDED4;color:#333333;width:100%;height:30%;top:973px;font-family:Verdana">
+	<p ><font size="5">THE&nbsp<span><b>ACHIEVEMENTS</b></span></font></p>
+	<p><b>Oracle</b> Certified Java SE6 Professional.</p>
+	<p>Ranked 2nd in <b>Android</b> Development Test conducted by the <b>Note My Book</b> team.</p>
+	<p>Won the prize in Project India 2020 conducted by The Livewire Learning Team, and a return trip to <b>Infosys, Bangalore</b>.</p>
+	</div>
+
+	<div id="areas" style="position:absolute;background-color:#D6D3C4;color:#333333;width:100%;height:132.4%;top:1173px;font-family:Verdana">
+	<p ><font size="5">AREAS OF&nbsp<span><b>EXPERTISE</b></span></font></p>
+	<p>NVIDIA Gelato Pro GPU-Powered Rendering Software <progress value="80" max="100" min="0"></progress> </p> 
+	<p>Adobe After Effects <br><progress value="70" max="100" min="0"></progress> </p>
+	<p>Adobe Premier Pro <br><progress value="85" max="100" min="0"></progress> </p>
+	<p>Adobe Photoshop <br><progress value="80" max="100" min="0"></progress> </p>
+	<p>Autodesk Maya <br><progress value="60" max="100" min="0"></progress> </p>
+	<p>Sony Vegas Pro <br><progress value="80" max="100" min="0"></progress> </p>
+	<p>Adobe Illustrator <br><progress value="50" max="100" min="0"></progress> </p>
+	<p>Java, C++, C <br><progress value="70" max="100" min="0"></progress> </p>
+	<p>HTML <br><progress value="70" max="100" min="0"></progress> </p>
+	<p>CSS <br><progress value="60" max="100" min="0"></progress> </p>
+	<p>JavaScript <br><progress value="50" max="100" min="0"></progress> </p>
+	<p>PHP <br><progress value="45" max="100" min="0"></progress> </p>
+	<p>.NET <br><progress value="65" max="100" min="0"></progress> </p>
+	<p>MS SQL 2008 R2 <br><progress value="60" max="100" min="0"></progress> </p> 
+	</div>
+
+	<div id="academic" style="position:absolute;background-color:#DFDED4;color:#333333;
+	width:100%;height:60%;top:2061px;font-family:Verdana">
+	<p ><font size="5">ACADEMIC&nbsp<span><b>SECTION</b></span></font></p>
+	<b><p style="background-color:#333333;color:#ffffff"><font size="2"><i>2013-2015</i></font></p></b>
+	<p>Third Year Computer Engineering<br>Vivekanand Education Society's Institute of Technology, Chembur.<br>Mumbai University.<br></p>
+	<b><p style="background-color:#333333;color:#ffffff"><font size="2"><i>2012-2013</i></font></p></b>
+	<p>XIIth Higher Secondary School<br>Dixit Road Junior College of Science,Vile Parle.<br>Maharashtra Board.</p>
+	<b><p style="background-color:#333333;color:#ffffff"><font size="2"><i>2000-2011</i></font></p></b>
+	<p>Xth Secondary School<br>St. Stanislaus High School, Bandra.<br>Maharashtra Board.<br></p>
+	</div>
+
+	<div id="contact" style="position:absolute;background-color:#111111;color:#ffffff;width:100%;
+	height:32.2%;top:2461px;font-family:Verdana">
+	<p ><font size="5">CONTACT&nbsp<span><b>ME</b></span></font></p>
+	<p>nirbhaypherwani@outlook.com | nirbhay.pherwani@ves.ac.in | +917208040973</p>
+	<p>Carter Road | Bandra West | Mumbai - 400050</p>
+	<p> <a href="https://plus.google.com/104184608085056617018"><img width="60px" height="60px" src="G.png"></a> &nbsp
+	<a href="https://www.facebook.com/brutaltroyartlogo/posts/10202643837529850"><img width="60px" height="60px" src="Facebook.png"></a> 		&nbsp<a href="https://www.youtube.com/channel/UC6mgN-AyX2hFkf1Hl2CUGuw"><img width="60px" height="60px" src="Y.png"></a> &nbsp
+	<a href="https://instagram.com/nirbhaypherwani/"><img width="60px" height="60px" src="I.png"></a> &nbsp
+	<a href="https://www.quora.com/Nirbhay-Pherwani"><img width="60px" height="60px" src="Q.png"> </a>&nbsp
+	<a href="https://twitter.com/nirbhayph"><img width="60px" height="60px" src="T.png"></a></p>
+	</div>
+</div>
+
+<style>
+ul {
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+	text-transform:uppercase;
+}
+li:hover{
+	background-color:#333333;
+	cursor: pointer; cursor: hand;
+}
+a{
+	text-decoration:none;
+	color:#ffffff;
+}
+a:hover {
+	text-decoration:none;
+	background-color:#333333;
+	cursor: pointer; cursor: hand;
+}
+a:active {
+	background-color:#333333;
+}
+
+p {
+    	padding-left: 1cm;
+    	padding-right: 2cm;
+} 
+#top{
+	position: fixed;
+ 	top: 0;
+  	left: 30%;
+  	z-index: 9999;
+  	width: 100%;
+	height:12%;
+	padding-top:10px;
+	font-family:Verdana;
+  	background-color: #333333;
+}
+hr
+ { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
+
+progress {
+	background: #333333;
+	height:7px;
+	border:none;
+	width:500px;
+}
+progress::-moz-progress-bar { background-color: #CA171B; }
+</style>
+<body>
+</html>
