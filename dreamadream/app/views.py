@@ -61,3 +61,4 @@ def dash(request):
 
 def graph(request):
 	return render(request,'graphs.html')
+	
